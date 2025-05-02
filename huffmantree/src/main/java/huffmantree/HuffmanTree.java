@@ -49,3 +49,21 @@ public String encode(String text) {
     }
     return sb.toString();
 }
+
+public String decode(String bits) {
+        StringBuilder sb = new StringBuilder();
+        Node<Character> current = root;
+        for (char b : bits.toCharArray()) {
+            current = (b == '0') ? current.getLeft() : current.getRight();
+            if (current.getVal() != null) {
+                sb.append(current.getVal());
+                current = root;
+            }
+        }
+        return sb.toString();
+    }
+
+    public Map<Character, String> getCodes() {
+        return codes;
+    }
+}

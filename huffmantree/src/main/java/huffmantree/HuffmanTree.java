@@ -29,28 +29,28 @@ public class HuffmanTree {
         root = pq.poll();
         generateCodes(root, "");
     }
-}
 
-private void generateCodes(Node<Character> node, String code) {
-    if (node == null) return;
-    if (node.getVal() != null) {
-        codes.put(node.getVal(), code);
-    } else {
-        // Las ramas de la izquierda son cero y las ramas de la derecha son 1
-        generateCodes(node.getLeft(), code + '0');
-        generateCodes(node.getRight(), code + '1');
+
+    private void generateCodes(Node<Character> node, String code) {
+        if (node == null) return;
+        if (node.getVal() != null) {
+            codes.put(node.getVal(), code);
+        } else {
+            // Las ramas de la izquierda son cero y las ramas de la derecha son 1
+            generateCodes(node.getLeft(), code + '0');
+            generateCodes(node.getRight(), code + '1');
+        }
     }
-}
 
-public String encode(String text) {
-    StringBuilder sb = new StringBuilder();
-    for (char c : text.toCharArray()) {
-        sb.append(codes.get(c));
+    public String encode(String text) {
+        StringBuilder sb = new StringBuilder();
+        for (char c : text.toCharArray()) {
+            sb.append(codes.get(c));
+        }
+        return sb.toString();
     }
-    return sb.toString();
-}
 
-public String decode(String bits) {
+    public String decode(String bits) {
         StringBuilder sb = new StringBuilder();
         Node<Character> current = root;
         for (char b : bits.toCharArray()) {

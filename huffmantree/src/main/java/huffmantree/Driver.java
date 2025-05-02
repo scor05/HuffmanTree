@@ -3,6 +3,7 @@ package huffmantree;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -29,11 +30,13 @@ public class Driver{
 
             String text = data.toString();
             HuffmanTree ht = new HuffmanTree();
-            // ht.build(text);
+            ht.build(text);
+
             System.out.println("--------------------------------");
             System.out.println("\t Entrada original");
             System.out.println("--------------------------------");
             System.out.println(text);
+
             String encoded = ht.encode(text);
             System.out.println("--------------------------------");
             System.out.println("\t Texto codificado");
@@ -49,8 +52,6 @@ public class Driver{
             System.out.println("--------------------------------");
             System.out.println("\t Tabla de caracteres");
             System.out.println("--------------------------------");
-            
-            
             HashMap<Character, String> m = (HashMap<Character, String>) ht.getCodes();
             for (Character c : m.keySet()){
                 System.out.println("'" + c + "' : " + m.get(c));

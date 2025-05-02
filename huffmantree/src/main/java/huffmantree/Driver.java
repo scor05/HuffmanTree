@@ -34,13 +34,13 @@ public class Driver{
             System.out.println("\t Entrada original");
             System.out.println("--------------------------------");
             System.out.println(text);
-            // String encoded = ht.encode(text);
+            String encoded = ht.encode(text);
             System.out.println("--------------------------------");
             System.out.println("\t Texto codificado");
             System.out.println("--------------------------------");
             System.out.println(encoded);
 
-            // String decoded = ht.decode(encoded);
+            String decoded = ht.decode(encoded);
             System.out.println("--------------------------------");
             System.out.println("\t Texto decodificado");
             System.out.println("--------------------------------");

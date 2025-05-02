@@ -50,12 +50,12 @@ public class Driver{
             System.out.println("\t Tabla de caracteres");
             System.out.println("--------------------------------");
             
-            /*
+            
             HashMap<Character, String> m = (HashMap<Character, String>) ht.getCodes();
             for (Character c : m.keySet()){
                 System.out.println("'" + c + "' : " + m.get(c));
             }
-            */
+            
             
         } while (true);
         System.out.println("Gracias por utilizar nuestro código :D");

@@ -30,7 +30,10 @@ public class Driver{
             String text = data.toString();
             HuffmanTree ht = new HuffmanTree();
             // ht.build(text);
-
+            System.out.println("--------------------------------");
+            System.out.println("\t Entrada original");
+            System.out.println("--------------------------------");
+            System.out.println(text);
             // String encoded = ht.encode(text);
             System.out.println("--------------------------------");
             System.out.println("\t Texto codificado");
